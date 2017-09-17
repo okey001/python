@@ -1,9 +1,16 @@
-﻿L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+﻿def fact(n):
 
-def by_name(t):
-    return -t[1]
+	>>> fact(1)
+	1
+	>>> fact(2)
+	3
+    '''
+    if n < 1:
+        raise ValueError()
+    if n == 1:
+        return 1
+    return n * fact(n - 1)
 
-
-
-L2 = sorted(L, key=by_name)
-print(L2)
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
